@@ -5294,7 +5294,19 @@ var render = function render() {
         name: "fruit.index"
       }
     }
-  }, [_vm._v("List")]), _vm._v(" "), _c("router-view")], 1);
+  }, [_vm._v("List")]), _vm._v(" "), _c("router-link", {
+    attrs: {
+      to: {
+        name: "user.login"
+      }
+    }
+  }, [_vm._v("Login")]), _vm._v(" "), _c("router-link", {
+    attrs: {
+      to: {
+        name: "user.registration"
+      }
+    }
+  }, [_vm._v("Registration")]), _vm._v(" "), _c("router-view")], 1);
 };
 
 var staticRenderFns = [];
@@ -5320,6 +5332,7 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].config.productionTip = false;
 var app = new vue__WEBPACK_IMPORTED_MODULE_2__["default"]({
   el: "#app",
   components: {
@@ -5385,11 +5398,23 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
-    path: 'fruits',
+    path: '/fruits',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ "resources_js_components_fruit_Index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/fruit/Index */ "./resources/js/components/fruit/Index.vue"));
+      return __webpack_require__.e(/*! import() */ "resources_js_components_Fruit_Index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Fruit/Index */ "./resources/js/components/Fruit/Index.vue"));
     },
     name: 'fruit.index'
+  }, {
+    path: '/users/login',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_User_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/User/Login */ "./resources/js/components/User/Login.vue"));
+    },
+    name: 'user.login'
+  }, {
+    path: '/users/registration',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_User_Registration_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/User/Registration */ "./resources/js/components/User/Registration.vue"));
+    },
+    name: 'user.registration'
   }]
 }));
 
@@ -43135,7 +43160,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_components_fruit_Index_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Fruit_Index_vue":1,"resources_js_components_User_Login_vue":1,"resources_js_components_User_Registration_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
