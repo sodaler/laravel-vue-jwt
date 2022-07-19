@@ -16,7 +16,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       email: null,
-      password: null
+      password: null,
+      error: null
     };
   },
   methods: {
@@ -32,6 +33,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: 'user.personal'
         });
+      })["catch"](function (error) {
+        _this.error = error.response.data.error;
       });
     }
   }
@@ -110,7 +113,9 @@ var render = function render() {
         return _vm.login.apply(null, arguments);
       }
     }
-  })]);
+  }), _vm._v(" "), _vm.error ? _c("div", {
+    staticClass: "text-danger"
+  }, [_vm._v(_vm._s(this.error))]) : _vm._e()]);
 };
 
 var staticRenderFns = [];
