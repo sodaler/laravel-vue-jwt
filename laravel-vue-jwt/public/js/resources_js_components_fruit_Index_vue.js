@@ -128,10 +128,13 @@ api.interceptors.response.use(function (config) {
       error.config.headers.authorization = "Bearer ".concat(res.data.access_token);
       return api.request(error.config);
     });
-  } // if (error.response.status === 401) {
-  //     router.push({name: 'user.login'})
-  // }
+  }
 
+  if (error.response.status === 401) {
+    _router__WEBPACK_IMPORTED_MODULE_1__["default"].push({
+      name: 'user.login'
+    });
+  }
 }); // end response
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (api);
